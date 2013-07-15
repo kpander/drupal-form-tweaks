@@ -1,0 +1,32 @@
+Form Tweaks 7.x-1.6, 2012-03-13
+-------------------------------
+- Bugfix: node_form tweaks were being applied to all forms, not just node forms
+- Bugfix: form_tweaks_module_implements_alter() was being run on all _alter
+  events, instead of being restricted to form_alter
+
+Form Tweaks 7.x-1.5, 2012-03-11
+-------------------------------
+- Add 'save', 'delete' and 'cancel' buttons in 'file_entity_edit' form
+
+Form Tweaks 7.x-1.4, 2012-02-26
+-------------------------------
+- Added ability to hide some items by wrapping the form element with prefix/
+  suffix 'display:none' to account for hiding items that we still need to 
+  configure programmatically
+
+Form Tweaks 7.x-1.3, 2012-02-24
+-------------------------------
+- Added field definitions node path fieldset, node preview button
+
+Form Tweaks 7.x-1.2, 2012-02-15
+-------------------------------
+- Added field definitions for form file_entity_edit
+- Added ability to hide node title form field
+
+Form Tweaks 7.x-1.1, 2012-02-09
+-------------------------------
+- Revised to allow for both form #access and css {display:none;} methods
+
+Form Tweaks 7.x-1.0, 2012-02-08
+-------------------------------
+- Initial development (Kendall Anderson)

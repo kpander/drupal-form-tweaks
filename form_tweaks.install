@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * Provides install, upgrade and uninstall functions.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function form_tweaks_install() {
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function form_tweaks_uninstall() {
+}
+
