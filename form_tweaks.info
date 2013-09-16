@@ -4,12 +4,7 @@ package = "Design Lab"
 
 core = 7.x
 
-version = "7.x-1.6"
+version = "7.x-1.7"
 
 
-
-; Information added by drush on 2012-12-18
-version = "unknown"
-project = "form_tweaks"
-datestamp = "1355850480"
 
