@@ -109,7 +109,6 @@ function form_tweaks_module_implements_alter(&$implementations, $hook) {
  * affected form elements now.
  */
 function form_tweaks_form_alter(&$form, &$form_state, $form_id) {
-dpm($form, $form_id);
   static $defs = null;
   if (is_null($defs)) {
     $defs = module_invoke_all('form_tweaks_definitions');
