@@ -99,7 +99,9 @@ These apply to the file edit form (form_id: file_entity_edit):
   file-submit                 Save the file (button)
   file-delete                 Delete the file (button)
   file-cancel                 Cancel the file edit form submission (link)
-
+  file-destination-fieldset   File destination fieldset
+  file-path-fieldset          URL Alias fieldset
+  file-user-fieldset          Associated user fieldset
 
 
 

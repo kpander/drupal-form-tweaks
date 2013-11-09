@@ -1,3 +1,7 @@
+Form Tweaks 7.x-1.7, 2012-09-16
+-------------------------------
+- Added additional default configurations (for file_entity forms)
+
 Form Tweaks 7.x-1.6, 2012-03-13
 -------------------------------
 - Bugfix: node_form tweaks were being applied to all forms, not just node forms

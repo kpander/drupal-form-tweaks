@@ -73,6 +73,9 @@ function form_tweaks_form_tweaks_definitions() {
       'file-save'                   => array('actions', 'submit'), 
       'file-delete'                 => array('actions', 'delete'), 
       'file-cancel'                 => array('actions', 'cancel'), 
+      'file-destination-fieldset'   => array('destination'),
+      'file-path-fieldset'          => array('path'),
+      'file-user-fieldset'          => array('user'),
     ),
   );
 }
