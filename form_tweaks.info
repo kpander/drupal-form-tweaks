@@ -1,10 +1,9 @@
 name = "Form Tweaks"
 description = "Allows specific form fields to be hidden via form #access property or css, depending on form_id and user role."
-package = "Design Lab"
+package = "User Interface"
 
 core = 7.x
 
-version = "7.x-1.7"
+version = "7.x-2.0"
 
-
-
+files[] = class.FormTweaks.php

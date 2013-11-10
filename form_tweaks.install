@@ -15,4 +15,3 @@ function form_tweaks_install() {
  */
 function form_tweaks_uninstall() {
 }
-

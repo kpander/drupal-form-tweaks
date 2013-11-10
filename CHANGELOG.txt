@@ -1,3 +1,10 @@
+Form Tweaks 7.x-2.0, 2013-11-09
+-------------------------------
+- Revised the configuration structure to:
+  - make it clearer how rules applied and were matched
+  - add ability to exclude specific forms from global rules
+  - add ability to exclude specific roles from global rules
+
 Form Tweaks 7.x-1.7, 2012-09-16
 -------------------------------
 - Added additional default configurations (for file_entity forms)

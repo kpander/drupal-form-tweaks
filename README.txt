@@ -17,24 +17,46 @@ form_id to hide it on.
 
 e.g.,
 
-$conf['form_tweaks_config'] = array(
-  'all' => array(
-    'node-author-fieldset',
-    'node-menu-link-weight',
-  ),
-  'authenticated user' => array(
-    'node-options-promote',
-    array('node-options-sticky', 'news_node_form'),
-  ),
-);
+  // Define the container for the configuration items.
+  $conf['form_tweaks_config'] = array();
 
-What the above example will do is:
-- Hide the 'Authoring Information' fieldset for all users, on all node forms
-- Hide the 'Menu settings/Weight' field for all users, on all node forms
-- Hide the 'Publishing options/Promote to front page' field for users with the
-  'authenticated user' role, on all forms
-- Hide the 'Publishing options/Sticky at top of lists' field for users with the
-  'authenticated user' role, only on forms with the form_id 'news_node_form'
+  // On all forms, for all users, hide the 'Authoring Information' fieldset and
+  // the Menu Link: Weight field. However, do NOT hide these when we're showing
+  // the 'article_node_form' form.
+  $conf['form_tweaks_config'][] = array(
+    'roles' => array('all'),
+    'forms' => array('all'),
+    'excluded forms' => array('article_node_form'),
+    'elements' => array(
+      'node-author-fieldset',
+      'node-menu-link-weight',
+    ),
+  );
+
+  // On the 'news_node_form', only for users with the 'authenticated user' role,
+  // hide the 'Promote to front page' field and the 'Make sticky' field.
+  $conf['form_tweaks_config'][] = array(
+    'roles' => array('authenticated user'),
+    'forms' => array('news_node_form'),
+    'elements' => array(
+      'node-options-promote',
+      'node-options-sticky',
+    ),
+  );
+
+  // On the 'news_node_form', for all users except those with the 'editor' role,
+  // URL alias fieldset.
+  $conf['form_tweaks_config'][] = array(
+    'roles' => array('all user'),
+    'excluded roles' => array('editor'),
+    'forms' => array('news_node_form'),
+    'elements' => array(
+      'node-path-fieldset',
+    ),
+  );
+
+
+You can add as many rules as needed.
 
 
 Form Element Options
