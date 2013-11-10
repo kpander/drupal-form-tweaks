@@ -40,7 +40,7 @@ structure is an associative array, of arrays. For example:
   );
 
   // On the 'news_node_form', for all users except those with the 'editor' role,
-  // URL alias fieldset.
+  // hide the URL alias fieldset.
   $conf['form_tweaks_config'][] = array(
     'roles' => array('all user'),
     'excluded roles' => array('editor'),
