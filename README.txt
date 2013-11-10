@@ -10,12 +10,7 @@ as the user roles to affect.
 How to Use:
 -----------
 Define the different form fields to hide within your settings.php file. The 
-structure is an associative array, of arrays. The key is the role name to 
-affect, the value is an array of form elements to hide. If the form element
-is an array, the first value is the form element, the second is the specific
-form_id to hide it on. 
-
-e.g.,
+structure is an associative array, of arrays. For example:
 
   // Define the container for the configuration items.
   $conf['form_tweaks_config'] = array();
