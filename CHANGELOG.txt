@@ -1,3 +1,7 @@
+Form Tweaks 7.x-2.1, 2013-11-21
+-------------------------------
+- Added configuration support for Block form and Language fieldset
+
 Form Tweaks 7.x-2.0, 2013-11-09
 -------------------------------
 - Revised the configuration structure to:

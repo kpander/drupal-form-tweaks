@@ -85,6 +85,8 @@ These apply to all node forms (form_id: *_node_form):
   node-menu-link-weight       Menu settings/Weight select box
   node-menu-link-parent       Menu settings/Parent item select box
 
+  language-fieldset           The Language fieldset
+
   The following options are hidden by using css:
   node-input-filter-csshide   Node body Text Format select box and help text
   node-edit-summary-csshide   Node body 'Edit summary' link and teaser textarea
@@ -120,5 +122,14 @@ These apply to the file edit form (form_id: file_entity_edit):
   file-path-fieldset          URL Alias fieldset
   file-user-fieldset          Associated user fieldset
 
+
+These apply to the block configuration form (form_id: block_admin_configure):
+
+  Element                     Hides
+  --------------------------  --------------------------------
+  block-description           The block description (only used internally)
+  block-regions               The Region Settings fieldset
+  block-visibility-title      The 'Visibility Settings' title
+  block-visibility-fieldset   All options within the 'Visibility Settings' group
 
 

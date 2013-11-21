@@ -64,6 +64,8 @@ function form_tweaks_form_tweaks_definitions() {
       'node-author-fieldset-csshide'    => array('author'),
       'node-path-fieldset-csshide'      => array('path'),
       'node-menu-fieldset-csshide'      => array('menu'),
+
+      'language-fieldset'           => array('language'),
     ),
 
     // File edit form.
@@ -76,6 +78,14 @@ function form_tweaks_form_tweaks_definitions() {
       'file-destination-fieldset'   => array('destination'),
       'file-path-fieldset'          => array('path'),
       'file-user-fieldset'          => array('user'),
+    ),
+
+    // Block configuration form.
+    'block_admin_configure' => array(
+      'block-description'           => array('settings', 'info'),
+      'block-regions'               => array('regions'),
+      'block-visibility-title'      => array('visibility_title'),
+      'block-visibility-fieldset'   => array('visibility'),
     ),
   );
 }
