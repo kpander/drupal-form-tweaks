@@ -19,7 +19,6 @@ class FormTweaks {
       $defs = module_invoke_all('form_tweaks_definitions');
     }
     $this->defs = $defs;
-    dpm($defs, 'defs');
 
     // Get the current defined Form Tweaks configuration.
     $this->config = variable_get(FORM_TWEAKS_CONFIG, array());
