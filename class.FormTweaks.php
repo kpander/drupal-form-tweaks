@@ -19,6 +19,7 @@ class FormTweaks {
       $defs = module_invoke_all('form_tweaks_definitions');
     }
     $this->defs = $defs;
+    dpm($defs, 'defs');
 
     // Get the current defined Form Tweaks configuration.
     $this->config = variable_get(FORM_TWEAKS_CONFIG, array());
@@ -149,12 +150,50 @@ class FormTweaks {
    * @return boolean FALSE if no definition was found
    */
   public function getDefinitionForElement($element) {
+    // Check if we're providing a custom element definition on-the-fly.
+    if (preg_match("/^defined:/i", $element)) {
+      if ($this->addCustomElement($element)) {
+        $element = preg_replace("/^defined:/i", '', $element);
+        $element = array_shift(explode('=', $element));
+      }
+      else {
+        // Invalid custom element definition.
+        return FALSE;
+      }
+    }
+
     foreach ($this->defs as $group => $elements) {
       if (isset($elements[$element])) {
         return $elements[$element];
       }
     }
+
     return FALSE;
+  }
+
+  /**
+   * Parse a custom element definition and add it to our library of definitions.
+   *
+   * The expected format is:
+   *   DEFINED:<unique_key>=form_key1,form_key2,etc
+   *
+   * e.g.,
+   *   DEFINED:xmlsitemap-fieldset=xmlsitemap
+   *   DEFINED:metatags-advanced-fieldset=metatags,advanced
+   */
+  public function addCustomElement($element) {
+    $element = preg_replace("/^defined:/i", '', $element);
+    $items = explode('=', $element);
+    if (count($items) != 2) {
+      return FALSE;
+    }
+
+    if (!isset($this->defs['defined'])) {
+      $this->defs['defined'] = array();
+    }
+
+    $this->defs['defined'][$items[0]] = explode(',', $items[1]); 
+    return TRUE;
   }
 
 

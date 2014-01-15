@@ -54,6 +54,18 @@ structure is an associative array, of arrays. For example:
 You can add as many rules as needed.
 
 
+@todo: document how to add custom definitions. e.g.:
+
+  The expected format is:
+    DEFINED:<unique_key>=form_key1,form_key2,etc
+
+  e.g.,
+    DEFINED:xmlsitemap-fieldset=xmlsitemap
+    DEFINED:metatags-advanced-fieldset=metatags,advanced
+
+
+
+
 Form Element Options
 --------------------
 These are the available form elements you can reference in your $conf[] array:
