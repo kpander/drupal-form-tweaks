@@ -1,10 +1,19 @@
 Form Tweaks module
 --------------------
-Intent is to simplify forms by hiding certain form fields. There is no UI for
-this module. Form tweaks are configured through a variable setting.
+The intent of this module is to provide a way to simplify forms by hiding 
+certain form fields. There is no UI for this module. Form tweaks are configured 
+through a variable setting.
+
+The application of the form element hiding can be controlled by form and user
+roles. This can apply to all forms and/or user roles, individual ones. When
+rules apply to all forms or user roles, exceptions can also be defined.
 
 The individual configurations are set by providing the form id to affect as well 
 as the user roles to affect.
+
+A set of predefined items are available for hiding common form elements. For
+form elements not in predefined list, arbitrary form fields can be specified
+directly within the configuration (see 'Defining Your Own Elements' below).
 
 
 How to Use:
@@ -42,7 +51,7 @@ structure is an associative array, of arrays. For example:
   // On the 'news_node_form', for all users except those with the 'editor' role,
   // hide the URL alias fieldset.
   $conf['form_tweaks_config'][] = array(
-    'roles' => array('all user'),
+    'roles' => array('all'),
     'excluded roles' => array('editor'),
     'forms' => array('news_node_form'),
     'elements' => array(
@@ -54,21 +63,9 @@ structure is an associative array, of arrays. For example:
 You can add as many rules as needed.
 
 
-@todo: document how to add custom definitions. e.g.:
-
-  The expected format is:
-    DEFINED:<unique_key>=form_key1,form_key2,etc
-
-  e.g.,
-    DEFINED:xmlsitemap-fieldset=xmlsitemap
-    DEFINED:metatags-advanced-fieldset=metatags,advanced
-
-
-
-
 Form Element Options
 --------------------
-These are the available form elements you can reference in your $conf[] array:
+These are the predefined form elements you can reference in your $conf[] array:
 
 These apply to all node forms (form_id: *_node_form):
 
@@ -143,5 +140,48 @@ These apply to the block configuration form (form_id: block_admin_configure):
   block-regions               The Region Settings fieldset
   block-visibility-title      The 'Visibility Settings' title
   block-visibility-fieldset   All options within the 'Visibility Settings' group
+
+
+
+Defining Your Own Elements
+--------------------------
+If you need to hide a form element that isn't defined in the above list, you
+can do so by providing the form key(s) to hide directly within the Form Tweaks
+configuration.
+
+So, if we had a $form definition like this:
+
+$form = array(
+  'metatags' => array(
+    'title' => 'some title',
+    'advanced' => array(
+      'type' => 'fieldset',
+      'some-key' => array(
+        etc.
+      ),
+    ),
+  ),
+);
+
+... and we wanted to hide the 'advanced' fieldset, we could define the path
+to that form element like this:
+
+  $conf['form_tweaks_config'][] = array(
+    'roles' => array('all'),
+    'forms' => array('all'),
+    'elements' => array(
+      'DEFINED:hide-the-metatags=metatags,advanced',
+    ),
+  );
+
+The expected format is:
+  DEFINED:<a-unique-name-for-this-definition>=form_key1,form_key2,etc
+
+e.g.,
+  DEFINED:xmlsitemap-fieldset=xmlsitemap
+  DEFINED:metatags-advanced-fieldset=metatags,advanced
+
+
+
 
 

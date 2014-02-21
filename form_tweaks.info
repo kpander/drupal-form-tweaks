@@ -4,6 +4,6 @@ package = "User Interface"
 
 core = 7.x
 
-version = "7.x-2.2"
+version = "7.x-2.3"
 
 files[] = class.FormTweaks.php

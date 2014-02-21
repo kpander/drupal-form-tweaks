@@ -1,3 +1,7 @@
+Form Tweaks 7.x-2.3, 2014-02-21
+-------------------------------
+- Documentation updates for custom form element definitions
+
 Form Tweaks 7.x-2.2, 2014-01-15
 -------------------------------
 - Added configuration support for custom form element definitions
