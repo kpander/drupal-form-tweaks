@@ -3,4 +3,5 @@
 - allow hook configuration also through conf vars so we don't have to
   add a tweaks module just to add some common form config definitions
 - rename to form_trim
-
+- provide a list of common 'recipes' to get someone started, with
+  explanations
