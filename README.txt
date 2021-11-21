@@ -1,3 +1,9 @@
+NOTE: This repo is a legacy Drupal 7.x module and is no longer maintained or considered relevant. It was originally hosted here:
+
+  - https://www.drupal.org/sandbox/kpander/2042421
+
+---
+
 Form Tweaks module
 --------------------
 The intent of this module is to provide a way to simplify forms by hiding 
